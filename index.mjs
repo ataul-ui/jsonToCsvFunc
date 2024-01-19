@@ -3,6 +3,8 @@ import data from './sample_data/data.json' assert { type: 'json' };
 
 import Papa from "papaparse";
 
+import document from "document"
+
 // Convert JSON to CSV
 const csvData = Papa.unparse(data.Bars, {
     header: true, // Include headers in the CSV file
