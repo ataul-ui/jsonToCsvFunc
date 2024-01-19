@@ -1,24 +1,28 @@
 
 import data from './sample_data/data.json' assert { type: 'json' };
-
 import Papa from "papaparse";
+import express from 'express';
+import fs from 'fs';
+const app = express();
+const port = 3000;
 
-import document from "document"
 
 // Convert JSON to CSV
 const csvData = Papa.unparse(data.Bars, {
     header: true, // Include headers in the CSV file
 });
+
+app.get('/download-csv', (req, res) => {
   
-  // Create a Blob from the CSV data
-const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    // Set response headers for CSV file download
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', 'attachment; filename=data.csv');
   
-  // Create a download link
-const link = document.createElement('a');
-link.href = URL.createObjectURL(blob);
-link.setAttribute('download', 'output.csv');
+    // Pipe the CSV content to the response
+    res.send(csvData);
+  });
   
-  // Append the link to the body and trigger the download
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
+  app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+});
+
