@@ -1,0 +1,20 @@
+{
+    "High": "218.32",
+    "Low": "212.42",
+    "Open": "214.02",
+    "Close": "216.39",
+    "TimeStamp": "2020-11-04T21:00:00Z",
+    "TotalVolume": "42311777",
+    "DownTicks": 231021,
+    "DownVolume": 19575455,
+    "OpenInterest": "0",
+    "IsRealtime": false,
+    "IsEndOfHistory": false,
+    "TotalTicks": 460552,
+    "UnchangedTicks": 0,
+    "UnchangedVolume": 0,
+    "UpTicks": 229531,
+    "UpVolume": 22736321,
+    "Epoch": 1604523600000,
+    "BarStatus": "Closed"
+}
