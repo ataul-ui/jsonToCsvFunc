@@ -56,9 +56,6 @@ app.post('/download-csv', async (req, res) => {
         res.setHeader('Content-Type', 'text/csv');
         res.setHeader('Content-Disposition', 'attachment; filename=data.csv');
 
-        // Save CSV data to a file in the "data" folder
-        //const dataFolderPath = path.join(__dirname, 'data');
-        //const filePath = path.join(dataFolderPath, 'data.csv');
 
         // Use path.join to create a cross-platform path
         const filePath = path.join(__dirname, 'data', 'data.csv');
